@@ -1,7 +1,44 @@
-Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling
-The paper evalutes and compare three RNN architecture (traditional tanh units,LSTM,GRU):
-the problem with the first architecture is vanishing or exploding gradients and didn't have the ability to learn long term dependencies.
-So, the author use two datasets to compare between two architectures (LSTN, GRU) to identify which of them solve the problem.
-LSTM use three gates input, forget, output) but GRU make anew gate called update gate that combines forget and input gates.
-The perforemance of the models (LSTM and GRU) are higher than the tanh RNNs especially on speech dataset, and the GRU converge faster than LSTM.
-So, the gated architectures are more effective than basic RNNs for sequence tasks, GRU more faster and simpler than LSTM, but finally we don't know which model is the best because it depends on out task and data.
+Summary of the Paper:
+"Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling"
+Authors: Junyoung Chung, Caglar Gulcehre, KyungHyun Cho, Yoshua Bengio
+
+Objective:
+The paper compares the performance of three types of recurrent units in Recurrent Neural Networks (RNNs) for sequence modeling tasks:
+
+1. Traditional tanh units
+2. Long Short-Term Memory (LSTM) units
+3. Gated Recurrent Units (GRUs)
+
+The focus is on evaluating the effectiveness of gated units (LSTM and GRU) in capturing long-term dependencies, particularly in polyphonic music modeling and speech signal modeling.
+
+Key Contributions:
+1. Architectural Comparison:
+   - **LSTM**: Uses input, forget, and output gates to regulate memory cell updates and exposure.
+   - **GRU**: Simpler than LSTM, with reset and update gates to modulate information flow but lacks a separate memory cell.
+   - Both units employ additive updates, mitigating vanishing gradients by creating shortcut paths for error backpropagation.
+
+2. Experimental Setup:
+   - **Datasets**:
+     - Polyphonic music (Nottingham, JSB Chorales, MuseData, Piano-midi).
+     - Raw speech signals (Ubisoft A and B).
+   - **Models**: LSTM-RNN, GRU-RNN, and tanh-RNN with comparable parameter counts for fair comparison.
+   - **Training**: RMSProp with gradient clipping and weight noise.
+
+3. Results:
+   - **Polyphonic Music**: GRU outperformed LSTM on most datasets (e.g., JSB Chorales, MuseData) but was comparable on others (Nottingham).
+   - **Speech Modeling**: Gated units (LSTM/GRU) significantly outperformed tanh units. LSTM excelled on Ubisoft A; GRU on Ubisoft B.
+   - **Efficiency**: GRUs often converged faster in terms of CPU time and updates (see learning curves below).
+
+4. Illustrative Figures:
+   - **Model Architectures**:
+     - LSTM: Input, forget, and output gates regulate memory cell (c) and hidden state (h).
+     - GRU: Reset (r) and update (z) gates interpolate between previous and candidate activations.
+     - (Refer to Figure 1 in the paper for visualizations.)
+   - **Learning Curves**:
+     - Music Datasets (Fig. 2): GRU achieved lower negative log-likelihood faster than LSTM/tanh.
+     - Speech Datasets (Fig. 3): tanh units stagnated early, while gated units continued improving.
+
+Conclusions:
+- Gated units (LSTM/GRU) consistently outperformed tanh units, especially in complex tasks like speech modeling.
+- No clear winner between LSTM and GRU: Performance depended on the dataset/task.
+- GRUs showed computational advantages, often converging faster with comparable accuracy.

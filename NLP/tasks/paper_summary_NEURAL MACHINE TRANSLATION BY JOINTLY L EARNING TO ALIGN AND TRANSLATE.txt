@@ -1,0 +1,19 @@
+NEURAL MACHINE TRANSLATION BY JOINTLY L EARNING TO ALIGN AND TRANSLATE
+ 
+- Unlike traditional statistical machine translation, NMT uses a single neural network to improve translation performance and recent models in NMT often utilize an encoder-decoder structure, converting a source sentence into a fixed-length vector for translation generation.
+
+- The authors in this paper propose that the fixed-length vector is a limitation and suggest allowing the model to (soft-)search for relevant parts of the source sentence for better predictions and the qualitative analysis indicates the model’s (soft-)alignments correspond well with intuitive expectations.
+
+- The combined learning of alignment and translation leads to better performance than the basic encoder-decoder approach and there are a noticeable improvements with longer sentences but also seen in shorter sentences.
+
+- The proposed approach was evaluated using bilingual, parallel corpora from ACL WMT ’14 for English-to-French translation and the performance comparison was made with a recently introduced RNN Encoder-Decoder model by Cho et al. (2014a) gives:
+ 
+- The traditional encoder-decoder NMT approach encodes input as a fixed-length vector, which can be problematic for long sentences. 
+- The authors proposed a new architecture to resolve these issues, allowing the model to (soft-)search for input words during target word generation. 
+- This adaptation improves the ability of NMT systems to perform well with longer sentences. 
+- Unlike traditional systems, all components of the translation process, including alignment, are jointly trained to enhance log-probability for correct translations. 
+- The proposed model, RNNsearch, was tested for English-to-French translation and significantly outperformed the conventional encoder-decoder model (RNNencdec) across all sentence lengths. 
+- The model showed more robustness to source sentence length variations. 
+- Qualitative analysis demonstrated correct alignment of target words with relevant source words or annotations, confirming accurate translations. 
+- The results indicate that RNNsearch performs comparably to established phrase-based statistical translation systems, despite being a recent development. 
+- This architecture represents a promising advancement for machine translation and understanding natural languages.

@@ -1,0 +1,15 @@
+Enhancing Neural Machine Translation with Attention Mechanisms
+
+
+Recent advancements in neural machine translation (NMT) have utilized an attentional mechanism to enhance translation by focusing on certain parts of the source sentence. 
+This paper examines two types of attention mechanisms: global (attending to all source words) and local (focusing on a subset of words). 
+
+• Both approaches were tested on WMT translation tasks between English and German. 
+
+• The local attention method achieved a notable improvement of 5.0 BLEU points over traditional systems. 
+
+• An ensemble model that combines different attention architectures achieved a state-of-the-art result in the English to German translation task, reaching 25.9 BLEU points, surpassing previous benchmarks. 
+
+The paper analyze various alignment functions and demonstrate that attention-based models are generally better, especially for names and long sentences.
+
+So, The paper highlighted the effectiveness of attentional mechanisms in improving NMT performance, particularly through local attention strategies and ensemble models.

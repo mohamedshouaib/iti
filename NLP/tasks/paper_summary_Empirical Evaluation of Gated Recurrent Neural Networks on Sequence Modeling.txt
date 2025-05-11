@@ -1,1 +1,7 @@
-
+Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling
+The paper evalutes and compare three RNN architecture (traditional tanh units,LSTM,GRU):
+the problem with the first architecture is vanishing or exploding gradients and didn't have the ability to learn long term dependencies.
+So, the author use two datasets to compare between two architectures (LSTN, GRU) to identify which of them solve the problem.
+LSTM use three gates input, forget, output) but GRU make anew gate called update gate that combines forget and input gates.
+The perforemance of the models (LSTM and GRU) are higher than the tanh RNNs especially on speech dataset, and the GRU converge faster than LSTM.
+So, the gated architectures are more effective than basic RNNs for sequence tasks, GRU more faster and simpler than LSTM, but finally we don't know which model is the best because it depends on out task and data.

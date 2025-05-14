@@ -62,7 +62,7 @@ The model's performance is evaluated using the BLEU score, which measures the si
 To run the training and evaluation process, follow these steps:
 Clone the repository:
 ```
-git clone https://github.com/yourusername/lstm-translation-project.git
+git clone https://github.com/mohamedshouaib/lstm-translation-project.git
 cd lstm-translation-project
 ```
 Install the dependencies:
